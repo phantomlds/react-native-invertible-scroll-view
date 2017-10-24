@@ -67,18 +67,31 @@ let InvertibleScrollView = createReactClass({
   },
 });
 
+const verticalTransform = [
+  { scaleY: -1 },
+];
+
+const horizontalTransform = [
+  { scaleX: -1 },
+];
+
+if (Platform.OS === 'android') {
+  verticalTransform.push({
+    perspective: 1280,
+  });
+  horizontalTransform.push({
+    perspective: 1280,
+  })
+}
+
 let styles = StyleSheet.create({
   verticallyInverted: {
     flex: 1,
-    transform: [
-      { scaleY: -1 },
-    ],
+    transform: verticalTransform,
   },
   horizontallyInverted: {
     flex: 1,
-    transform: [
-      { scaleX: -1 },
-    ],
+    transform: horizontalTransform,
   },
 });
 
