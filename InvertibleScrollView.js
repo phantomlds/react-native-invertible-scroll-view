@@ -8,6 +8,7 @@ import {
   ScrollView,
   StyleSheet,
   View,
+  Platform,
 } from 'react-native';
 import ScrollableMixin from 'react-native-scrollable-mixin';
 
